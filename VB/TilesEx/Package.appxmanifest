@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="1a18a1f0-7c95-4a28-b731-1f70f67b0297"
+    Name="e44b5965-b1fa-4925-b0d4-f9cf80577783"
     Publisher="CN=zolotarev"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="1a18a1f0-7c95-4a28-b731-1f70f67b0297" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e44b5965-b1fa-4925-b0d4-f9cf80577783" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>TilesEx</DisplayName>
