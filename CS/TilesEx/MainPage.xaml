@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="TilesEx.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TilesEx"
+    xmlns:Layout="using:DevExpress.UI.Xaml.Layout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Layout:LayoutControl Orientation="Vertical" Grid.Row="1">
+            <Layout:LayoutControl.Resources>
+                <Style TargetType="Layout:LayoutItem">
+                    <Setter Property="HeaderPosition" Value="Top" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+            </Layout:LayoutControl.Resources>
+            <Layout:LayoutItem Header="Tile BackContent">
+                <Layout:Tile Header="Beverages" AllowCheck="True" Checked="True" Background="Orchid" CheckMode="Tap" >
+                    <Layout:Tile.BackContentTemplate>
+                        <DataTemplate>
+                            <Image Source="Assets/Beverages.jpg" Stretch="Fill" />
+                        </DataTemplate>
+                    </Layout:Tile.BackContentTemplate>
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Soft Drinks:"/>
+                        <Layout:SlideDecorator ContentChangeInterval="0:0:3">
+                            <x:String>Coffee</x:String>
+                            <x:String>Ice Tea</x:String>
+                            <x:String>Juice</x:String>
+                        </Layout:SlideDecorator>
+                    </StackPanel>
+                </Layout:Tile>
+            </Layout:LayoutItem>
+            <Layout:LayoutItem Header="Slide Decorator">
+                <Layout:Tile Header="Beverages" Background="Orchid" CheckMode="Tap">
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Soft Drinks:"/>
+                        <Layout:SlideDecorator ContentChangeInterval="0:0:3">
+                            <x:String>Coffee</x:String>
+                            <x:String>Ice Tea</x:String>
+                            <x:String>Juice</x:String>
+                        </Layout:SlideDecorator>
+                    </StackPanel>
+                </Layout:Tile>
+            </Layout:LayoutItem>
+            <Layout:LayoutItem Header="Swing Decorator">
+                <Layout:Tile Header="Zillow" Background="#FF7CA7D1" Size="Wide" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <Layout:SwingDecorator>
+                        <Layout:SwingDecorator.ContentTemplate>
+                            <DataTemplate>
+                                <Image Margin="12" Source="Assets/ZillowLogo.png" Stretch="None"/>
+                            </DataTemplate>
+                        </Layout:SwingDecorator.ContentTemplate>
+                        <Layout:SwingDecorator.TopContentTemplate>
+                            <DataTemplate>
+                                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                                </TextBlock>
+                            </DataTemplate>
+                        </Layout:SwingDecorator.TopContentTemplate>
+                    </Layout:SwingDecorator>
+                </Layout:Tile>
+            </Layout:LayoutItem>
+            <Layout:LayoutItem Header="Mosaic Decorator">
+                <Layout:Tile Header="Employees" Size="Large" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <Layout:MosaicDecorator ContentSource="{Binding Employees}" ImageColumnCount="3" ImageRowCount="3">
+                        <Layout:MosaicDecorator.ContentTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageSource}" Stretch="Fill"/>
+                            </DataTemplate>
+                        </Layout:MosaicDecorator.ContentTemplate>
+                    </Layout:MosaicDecorator>
+                </Layout:Tile>
+            </Layout:LayoutItem>
+        </Layout:LayoutControl>
+    </Grid>
+</Page>
