@@ -133,10 +133,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="DevExpress.Controls, Version=15.2">
+    <SDKReference Include="DevExpress.Controls, Version=16.2">
       <Name>DevExpress.Controls</Name>
     </SDKReference>
-    <SDKReference Include="DevExpress.Core, version=15.2">
+    <SDKReference Include="DevExpress.Core, version=16.2">
       <Name>DevExpress.Core</Name>
     </SDKReference>
   </ItemGroup>
